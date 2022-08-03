@@ -7,11 +7,11 @@ public class Test {
     public static void main(String[] args) {
         // Java 5
         List animals = new ArrayList();
-        Animal an = new Animal();
+
         animals.add("cat");
         animals.add("dog");
         animals.add("frog");
-        animals.add(an);
+
 
         String animal = (String) animals.get(3);
         System.out.println(animal);
