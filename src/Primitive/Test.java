@@ -2,18 +2,16 @@ package Primitive;
 
 public class Test {
     public static void main(String[] args) {
-        float f = (float) 123.2;
-
-        int a = 123;
-
-        long l = a; //не явное (вообще нет приведения)
-        int x = (int) l; //явное приведение типов
-
-        System.out.println(x);
-
         /**
-         * Это конвертирование (приведение) примитивных типов данных.
-         * Любое число которое помещается в int соответственно будет помещаться в long.
+         * у примитивов нет методов.
+         * Double, Float, Long, Integer, Short, Byte, Character, Boolean -
+         * с большой буквы - это классы обертки примитивных типов данных.
+         * Обертка — это специальный класс, который хранит внутри себя значение примитива.
          */
+        int x = 1;
+        Integer x2 = new Integer(123);
+
+
+
     }
 }
