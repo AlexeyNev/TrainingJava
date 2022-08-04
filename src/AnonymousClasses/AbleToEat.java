@@ -1,5 +1,5 @@
 package AnonymousClasses;
 
-public interface Animals {
+public interface AbleToEat {
     public void eat();
 }

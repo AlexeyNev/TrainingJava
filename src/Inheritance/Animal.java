@@ -3,10 +3,10 @@ package Inheritance;
 public class Animal {
 
     public void eat() {
-        System.out.println("Animals кушает");
+        System.out.println("AbleToEat кушает");
     }
 
     public void sleep() {
-        System.out.println("Animals спит");
+        System.out.println("AbleToEat спит");
     }
 }
