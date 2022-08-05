@@ -17,5 +17,7 @@ public class ReadingFromFile {
             System.out.println(scanner.nextLine());
         }
         scanner.close();
+
+
     }
 }
