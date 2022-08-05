@@ -5,14 +5,21 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Exceptions {
-    public static void main(String[] args) {
-        File file = new File("");
 
+    /* public static void main(String[] args) throws FileNotFoundException {
+        readFile();
+    } */  //обработать исключение можно либо так
+
+    public static void main(String[] args) {
         try {
-            Scanner scanner = new Scanner(file);
+            readFile();
         } catch (FileNotFoundException e) {
-            System.out.println("Путь к файлу не найден");
+            e.printStackTrace();
         }
-            System.out.println("После блока try catch");
+    } //либо так
+
+    public static void readFile() throws FileNotFoundException {
+        File file = new File("");
+        Scanner scanner = new Scanner(file);
     }
 }
