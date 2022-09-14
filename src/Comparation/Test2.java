@@ -87,4 +87,4 @@ class Employee implements Comparable<Employee> {
                 return employee1.salary - employee2.salary;
             }
         }
-    }
+    }}
