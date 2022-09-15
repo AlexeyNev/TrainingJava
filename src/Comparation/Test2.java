@@ -74,18 +74,18 @@ class Employee implements Comparable<Employee> {
 //        }
 //    }
 
-        class NameComparator implements Comparator<Employee> {
-            @Override
-            public int compare(Employee employee1, Employee employee2) {
-                return employee1.name.compareTo(employee2.name);
-            }
-        }
-
-        class SalaryComparator implements Comparator<Employee> {
-            @Override
-            public int compare(Employee employee1, Employee employee2) {
-
-                return employee1.salary - employee2.salary;
-            }
-        }
+//        class NameComparator implements Comparator<Employee> {
+//            @Override
+//            public int compare(Employee employee1, Employee employee2) {
+//                return employee1.name.compareTo(employee2.name);
+//            }
+//        }
+//
+//        class SalaryComparator implements Comparator<Employee> {
+//            @Override
+//            public int compare(Employee employee1, Employee employee2) {
+//
+//                return employee1.salary - employee2.salary;
+//            }
+//        }
     }}
