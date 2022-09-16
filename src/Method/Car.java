@@ -1,34 +1,23 @@
 package Method;
 
 public class Car {
+    Car(String cvet, String motor) {
+        color = cvet;
+        engine = motor;
+
+        System.out.println("Цвет " + color + " " + "Мотор машины " + engine);
+    }
+
     String color;
     String engine;
-    int speed;
 
-    int gaz(int a) {
-        speed += a;
-        return speed;
-    }
 
-    int tormoz(int a) {
-        speed -= a;
-        return speed;
-    }
-
-    void showInfo() {
-        System.out.println("Цвет машины " + color + " " + "Двигатель " + engine + " " + "Скорость " + speed);
-    }
 }
 
 class CarTest {
     public static void main(String[] args) {
-        Car car = new Car();
-        car.engine = "V8";
-        car.color = "red";
-        car.speed = 70;
+        Car car = new Car("Black", "2.0");
+        Car car1 = new Car("White", "1.6");
 
-        car.showInfo();
-        car.gaz(20);
-        car.showInfo();
     }
 }
