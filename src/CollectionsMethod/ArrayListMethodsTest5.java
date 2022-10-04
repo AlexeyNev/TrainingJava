@@ -6,6 +6,9 @@ import java.util.List;
 /**
  * containsAll() - проверяет содержит ли arrayList все элементы arrayLista из переданного параметра
  * subList() - создает из имеющегося arrayLista subList, т.е его отрывок в виде List<>
+ * toArray() - создает из arrayList массив типа object
+ * toArray() String[] - можно сделать массив типа String
+ * List<> - нельзя модифицировать и добавить в них значение null
  */
 public class ArrayListMethodsTest5 {
     public static void main(String[] args) {
