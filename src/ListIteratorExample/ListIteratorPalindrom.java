@@ -20,6 +20,7 @@ public class ListIteratorPalindrom {
                 break;
             }
         }
+
         if (isPalindrom) {
             System.out.println("Palindrom");
         }
