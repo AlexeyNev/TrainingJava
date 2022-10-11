@@ -1,6 +1,5 @@
-package set;
+package Set;
 
-import java.rmi.server.UnicastRemoteObject;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
