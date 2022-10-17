@@ -2,6 +2,7 @@ package HashMapTest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class TestMap {
@@ -12,23 +13,25 @@ public class TestMap {
         maps.put(12345, "Mars");
         System.out.println(maps);
 
-        String nameAlexey = maps.get(123);
-        String nameAlla = maps.get(1234);
-        String nameMars = maps.get(12345);
-        System.out.println(nameAlexey);
-        System.out.println(nameAlla);
-        System.out.println(nameMars);
+//        String nameAlexey = maps.get(123);
+//        String nameAlla = maps.get(1234);
+//        String nameMars = maps.get(12345);
+//        System.out.println(nameAlexey);
+//        System.out.println(nameAlla);
+//        System.out.println(nameMars);
+//
+//        maps.remove(123);
+//        System.out.println(maps);
+//
+//        System.out.println(maps.containsKey(123));
+//        System.out.println(maps.containsValue("Mars"));
+//
+//        Set<Integer> keys = maps.keySet();
+//        System.out.println("Ключи " + keys);
+//
+//        ArrayList<String> values = new ArrayList<>(maps.values());
+//        System.out.println("Значения " + values);
 
-        maps.remove(123);
-        System.out.println(maps);
-
-        System.out.println(maps.containsKey(123));
-        System.out.println(maps.containsValue("Mars"));
-
-        Set<Integer> keys = maps.keySet();
-        System.out.println("Ключи " + keys);
-
-        ArrayList<String> values = new ArrayList<>(maps.values());
-        System.out.println("Значения " + values);
+        Map<Integer, String> map2 = new HashMap<>(16, 0.75f);
     }
 }
