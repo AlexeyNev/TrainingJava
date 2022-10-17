@@ -20,10 +20,10 @@ public class HashCodeEx {
         System.out.println(st1.hashCode());
     }
 
-    static class Student {
-        final String name;
-        final String surname;
-        final int course;
+    public static class Student {
+        public final String name;
+        public final String surname;
+        public final int course;
 
         public Student(String name, String surname, int course) {
             this.name = name;
