@@ -1,10 +1,11 @@
 package Nested_Classes.Static_nested_class;
 
+import Polymorf.Cat;
+
 public class Car {
     String color;
     int doorCount;
     Engine engine;
-
 
     public Car(String color, int doorCount, Engine engine) {
         this.color = color;
@@ -14,13 +15,12 @@ public class Car {
 
     @Override
     public String toString() {
-        return "My car {" +
+        return "My car: {" +
                 "color='" + color + '\'' +
                 ", doorCount=" + doorCount +
                 ", engine=" + engine +
                 '}';
     }
-
     /**
      * Engine - nested статичный класс внутри нашего внешнего класса Car.
      */
@@ -29,7 +29,6 @@ public class Car {
         int horsePower;
 
         public Engine(int horsePower) {
-
             this.horsePower = horsePower;
         }
 
@@ -42,13 +41,18 @@ public class Car {
     }
 }
 
-    class Test {
-        public static void main(String[] args) {
-            Car.Engine engine = new Car.Engine(250);
-            System.out.println(engine);
-            Car car = new Car("red", 2, engine);
-            System.out.println(car);
+class Test {
+    public static void main(String[] args) {
+        Car.Engine engine = new Car.Engine(250);
+        System.out.println(engine);
 
-        }
+        Car car = new Car("Red", 2, engine);
+        System.out.println(car);
+
+        Car.Engine engine1 = new Car.Engine(150);
+
     }
+}
+
+
 
