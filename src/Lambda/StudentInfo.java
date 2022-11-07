@@ -51,6 +51,14 @@ class Test {
 
         System.out.println("-------------");
 
+
+        Predicate<Student> p1 = el -> el.avgGrade > 8;
+        Predicate<Student> p2 = el -> el.sex == 'm';
+        info.testStudents(students, p1.and(p2));
+        /**
+         * с помощью and можно объединить две проверки
+         */
+
 //        info.testStudents(students, s -> s.course > 2); //короткая запись
 //
 //        StudentChecks sc = (Student p) -> {return p.avgGrade > 8;};
@@ -60,8 +68,8 @@ class Test {
          * Можно укоротить лямбду
          * info.testStudents(students, s -> s.avgGrade > 8);
          */
-        info.testStudents(students, s -> s.avgGrade > 8);
-        info.testStudents(students, s -> s.age < 27);
+//        info.testStudents(students, s -> s.avgGrade > 8);
+//        info.testStudents(students, s -> s.age < 27);
     }
 }
 //interface StudentChecks {
