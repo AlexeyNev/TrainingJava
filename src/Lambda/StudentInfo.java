@@ -1,12 +1,13 @@
 package Lambda;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class StudentInfo {
 
-    void testStudents(ArrayList<Student> a1, StudentChecks sc) {
+    void testStudents(ArrayList<Student> a1, Predicate<Student> pr) {
         for (Student s : a1) {
-            if (sc.check(s)) {
+            if (pr.test(s)) {
                 System.out.println(s);
             }
         }
@@ -30,18 +31,30 @@ class Test {
 
         StudentInfo info = new StudentInfo();
 
-        info.testStudents(students, (Student s) -> {return s.age < 30;} );
-        System.out.println("-------------");
-        info.testStudents(students, (Student s) -> {return  s.sex != 'm';});
-        System.out.println("-------------");
-        info.testStudents(students, (Student s) -> {return  s.avgGrade > 8.2;});
-        System.out.println("-------------");
-        info.testStudents(students, (Student s) -> {return  s.course > 2;}); //полная запись
-        System.out.println("-------------");
-        info.testStudents(students, s -> s.course > 2); //короткая запись
+        info.testStudents(students, (Student s) -> {
+            return s.age < 30;} );
 
-        StudentChecks sc = (Student p) -> {return p.avgGrade > 8;};
-        info.testStudents(students, sc); // еще один вариант записи
+        System.out.println("-------------");
+
+        info.testStudents(students, (Student s) -> {
+            return  s.sex != 'm';});
+
+        System.out.println("-------------");
+
+        info.testStudents(students, (Student s) -> {
+            return  s.avgGrade > 8.2;});
+
+        System.out.println("-------------");
+
+        info.testStudents(students, (Student s) -> {
+            return  s.course > 2;}); //полная запись
+
+        System.out.println("-------------");
+
+//        info.testStudents(students, s -> s.course > 2); //короткая запись
+//
+//        StudentChecks sc = (Student p) -> {return p.avgGrade > 8;};
+//        info.testStudents(students, sc); // еще один вариант записи
 
         /**
          * Можно укоротить лямбду
@@ -51,6 +64,6 @@ class Test {
         info.testStudents(students, s -> s.age < 27);
     }
 }
-interface StudentChecks {
-    boolean check(Student s);
-}
+//interface StudentChecks {
+//    boolean check(Student s);
+//}
