@@ -11,29 +11,6 @@ public class StudentInfo {
             }
         }
     }
-//    void printStudentOverGrade(ArrayList<Student> a1, double grade) {
-//        for (Student s : a1) {
-//            if (s.avgGrade > grade) {
-//                System.out.println(s);
-//            }
-//        }
-//    }
-//
-//    void printStudentUnderAge(ArrayList<Student> a1, int age) {
-//        for (Student s : a1) {
-//            if (s.age < age) {
-//                System.out.println(s);
-//            }
-//        }
-//    }
-//
-//    void printStudentMixCondition(ArrayList<Student> a1, int age, double grade, char sex) {
-//        for (Student s : a1) {
-//            if (s.age > age && s.avgGrade < grade && s.sex == sex) {
-//                System.out.println(s);
-//            }
-//        }
-//    }
 }
 
 class Test {
@@ -59,14 +36,19 @@ class Test {
         System.out.println("-------------");
         info.testStudents(students, (Student s) -> {return  s.avgGrade > 8.2;});
         System.out.println("-------------");
-        info.testStudents(students, (Student s) -> {return  s.course > 2;});
+        info.testStudents(students, (Student s) -> {return  s.course > 2;}); //полная запись
+        System.out.println("-------------");
+        info.testStudents(students, s -> s.course > 2); //короткая запись
 
-//        info.printStudentOverGrade(students, 8.4);
-//        System.out.println("-----------------");
-//        info.printStudentUnderAge(students,30);
-//        System.out.println("-----------------");
-//        info.printStudentMixCondition(students, 8, 9, 'w');
+        StudentChecks sc = (Student p) -> {return p.avgGrade > 8;};
+        info.testStudents(students, sc); // еще один вариант записи
 
+        /**
+         * Можно укоротить лямбду
+         * info.testStudents(students, s -> s.avgGrade > 8);
+         */
+        info.testStudents(students, s -> s.avgGrade > 8);
+        info.testStudents(students, s -> s.age < 27);
     }
 }
 interface StudentChecks {
