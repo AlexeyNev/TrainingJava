@@ -1,7 +1,9 @@
 package Lambda;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
+import java.util.function.Function;
 
 public class StudentInfo {
 
@@ -31,30 +33,37 @@ class Test {
 
         StudentInfo info = new StudentInfo();
 
-        info.testStudents(students, (Student s) -> {
-            return s.age < 30;} );
 
-        System.out.println("-------------");
-
-        info.testStudents(students, (Student s) -> {
-            return  s.sex != 'm';});
-
-        System.out.println("-------------");
-
-        info.testStudents(students, (Student s) -> {
-            return  s.avgGrade > 8.2;});
-
-        System.out.println("-------------");
-
-        info.testStudents(students, (Student s) -> {
-            return  s.course > 2;}); //полная запись
-
-        System.out.println("-------------");
+        Function<Student, Double> f = student -> student.avgGrade;
+        double res = avgOfSmth(students, student -> (double)student.age);
+        System.out.println(res);
 
 
-        Predicate<Student> p1 = el -> el.avgGrade > 8;
-        Predicate<Student> p2 = el -> el.sex == 'm';
-        info.testStudents(students, p1.and(p2));
+
+//        info.testStudents(students, (Student s) -> {
+//            return s.age < 30;} );
+//
+//        System.out.println("-------------");
+//
+//        info.testStudents(students, (Student s) -> {
+//            return  s.sex != 'm';});
+//
+//        System.out.println("-------------");
+//
+//        info.testStudents(students, (Student s) -> {
+//            return  s.avgGrade > 8.2;});
+//
+//        System.out.println("-------------");
+//
+//        info.testStudents(students, (Student s) -> {
+//            return  s.course > 2;}); //полная запись
+//
+//        System.out.println("-------------");
+//
+//
+//        Predicate<Student> p1 = el -> el.avgGrade > 8;
+//        Predicate<Student> p2 = el -> el.sex == 'm';
+//        info.testStudents(students, p1.and(p2));
         /**
          * с помощью and можно объединить две проверки
          */
@@ -71,7 +80,20 @@ class Test {
 //        info.testStudents(students, s -> s.avgGrade > 8);
 //        info.testStudents(students, s -> s.age < 27);
     }
+
+
+    private static double avgOfSmth(List<Student> list, Function<Student, Double> f) {
+        double result = 0;
+        for (Student student : list) {
+            result += f.apply(student);
+        }
+        result = result / list.size();
+        return result;
+    }
 }
+
+
+
 //interface StudentChecks {
 //    boolean check(Student s);
 //}
