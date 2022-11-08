@@ -2,6 +2,7 @@ package Lambda;
 
 import java.util.ArrayList;
 import java.util.function.Supplier;
+import java.util.function.Consumer;
 
 public class Test3 {
     public static ArrayList<Car> createThreeCars(Supplier<Car> carSupplier) {
@@ -12,9 +13,21 @@ public class Test3 {
         return a;
     }
 
+    public static void ChangeCar(Car car, Consumer<Car> carConsumer) {
+        carConsumer.accept(car);
+    }
+
     public static void main(String[] args) {
         ArrayList<Car> ourCars = createThreeCars(() -> new Car("Nissan", "blue", 2.0));
         System.out.println("Our Cars " + ourCars);
+
+        ChangeCar(ourCars.get(0),
+                car -> {
+            car.color = "red";
+            car.engine = 2.5;
+            car.model = "Almera";
+            System.out.println("Upgraded car: " + car);
+        });
     }
 }
 
