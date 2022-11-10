@@ -2,10 +2,10 @@ package Lambda.test;
 
 import java.util.function.Predicate;
 
-public class PredicateCheckPositive {
+public class PredicateCheckEven {
 
     public static boolean check(int num) {
-        return check(n -> n > 0, num);
+        return check(n -> n % 2 == 0, num);
     }
 
     private static boolean check(Predicate<Integer> predicate, int num) {
