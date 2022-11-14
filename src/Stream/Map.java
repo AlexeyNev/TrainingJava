@@ -2,9 +2,8 @@ package Stream;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class Test {
+public class Map {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         list.add("Hello");

@@ -2,7 +2,7 @@ package Stream;
 
 import java.util.Arrays;
 
-public class Test3 {
+public class ForEach {
     public static void main(String[] args) {
         int [] array = {5, 9 , 4, 3, 1};
 //        Arrays.stream(array).forEach(e -> System.out.println(e));

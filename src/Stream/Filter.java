@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Test2 {
+public class Filter {
     public static void main(String[] args) {
         Student st1 = new Student("Alex", 'm', 28, 5.5);
         Student st2 = new Student("Alla", 'f', 25, 6.5);
