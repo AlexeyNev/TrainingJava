@@ -40,13 +40,25 @@ public class Chaining {
          * @filter() для фильтрации студентов по полу
          * @sorted() для сортировки студентов по возрасту
          * @forEach() для вывода полученных студентов
+         * @findFirst() для вывода первого значения стрима
          */
-        students.stream().map(e -> {
-            e.setName(e.getName().toUpperCase());
-            return e;
-        })
+//        students.stream().map(e -> {
+//            e.setName(e.getName().toUpperCase());
+//            return e;
+//        })
+//                .filter(e -> e.getSex() == 'f')
+//                .sorted((x, y) -> x.getAge() - y.getAge())
+//                .forEach(e -> System.out.println(e));
+
+
+                Student first =
+                        students.stream().map(e -> {
+                    e.setName(e.getName().toUpperCase());
+                    return e;
+                })
                 .filter(e -> e.getSex() == 'f')
                 .sorted((x, y) -> x.getAge() - y.getAge())
-                .forEach(e -> System.out.println(e));
+                .findFirst().get();
+                System.out.println(first);
     }
 }
