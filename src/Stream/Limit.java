@@ -2,6 +2,7 @@ package Stream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Limit {
     public static void main(String[] args) {
@@ -23,10 +24,37 @@ public class Limit {
          * @limit ограничение limit(2) теперь вместо 4 студентов останется только 2
          */
 
-        students.stream().filter(e -> e.getAge() > 20).forEach(System.out::println);
-        System.out.println("-----------------------------");
-        students.stream().filter(e -> e.getAge() > 20).limit(2).forEach(System.out::println);
-        System.out.println("-----------------------------");
-        students.stream().filter(e -> e.getAge() > 20).skip(2).forEach(System.out::println);
+//        students.stream().filter(e -> e.getAge() > 20).forEach(System.out::println);
+//        System.out.println("-----------------------------");
+//        students.stream().filter(e -> e.getAge() > 20).limit(2).forEach(System.out::println);
+//        System.out.println("-----------------------------");
+//        students.stream().filter(e -> e.getAge() > 20).skip(2).forEach(System.out::println);
+
+//          List<Integer> courses = students.stream()
+//                  .mapToInt(e -> e.getCourse())
+//                  .boxed()
+//                  .collect(Collectors.toList());
+//            System.out.println(courses);
+
+//            int sum = students.stream().mapToInt(e -> e.getCourse()).sum();
+//            System.out.println(sum);
+
+//              double avr = students.stream().mapToInt(e -> e.getCourse())
+//                      .average().getAsDouble();
+//              System.out.println(avr);
+
+               int min = students.stream().mapToInt(e -> e.getCourse()).min().getAsInt();
+               System.out.println(min);
+
+               int max = students.stream().mapToInt(e -> e.getCourse()).max().getAsInt();
+               System.out.println(max);
     }
 }
+
+/**
+ * @boxed() конвертирует (оборачивает) int в Integer.
+ * @sum() суммирует. В нашем случае суммирует курсы всех студентов
+ * @average() вычисляет среднее арифметическое
+ * @min() вычисляет минимальное значение в стриме
+ * @max() вычисляет максимальное значение в стриме
+ */
