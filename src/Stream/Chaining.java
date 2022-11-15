@@ -23,11 +23,11 @@ public class Chaining {
 
 
 
-        Student st1 = new Student("Alex", 'm', 28, 5.5);
-        Student st2 = new Student("Alla", 'f', 25, 6.5);
-        Student st3 = new Student("Max", 'm', 23, 7.5);
-        Student st4 = new Student("Anton", 'm', 24, 3.5);
-        Student st5 = new Student("Mariya", 'f', 14, 0.5);
+        Student st1 = new Student("Alex", 'm', 28, 2,5.5);
+        Student st2 = new Student("Alla", 'f', 25, 1,6.5);
+        Student st3 = new Student("Max", 'm', 23, 3,7.5);
+        Student st4 = new Student("Anton", 'm', 24, 4,3.5);
+        Student st5 = new Student("Mariya", 'f', 14, 5,0.5);
         List<Student> students = new ArrayList<>();
         students.add(st1);
         students.add(st2);

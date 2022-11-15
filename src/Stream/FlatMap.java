@@ -5,11 +5,11 @@ import java.util.List;
 
 public class FlatMap {
     public static void main(String[] args) {
-        Student st1 = new Student("Alex", 'm', 28, 5.5);
-        Student st2 = new Student("Alla", 'f', 25, 6.5);
-        Student st3 = new Student("Max", 'm', 23, 7.5);
-        Student st4 = new Student("Anton", 'm', 24, 3.5);
-        Student st5 = new Student("Mariya", 'f', 14, 0.5);
+        Student st1 = new Student("Alex", 'm', 28, 2,5.5);
+        Student st2 = new Student("Alla", 'f', 25, 1,6.5);
+        Student st3 = new Student("Max", 'm', 23, 4,7.5);
+        Student st4 = new Student("Anton", 'm', 24, 5,3.5);
+        Student st5 = new Student("Mariya", 'f', 14, 3,0.5);
 
         Faculty faculty = new Faculty("Economics");
         Faculty faculty1 = new Faculty("Apply mathematics");
