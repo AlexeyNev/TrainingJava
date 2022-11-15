@@ -23,6 +23,10 @@ public class Limit {
          * @limit ограничение limit(2) теперь вместо 4 студентов останется только 2
          */
 
+        students.stream().filter(e -> e.getAge() > 20).forEach(System.out::println);
+        System.out.println("-----------------------------");
         students.stream().filter(e -> e.getAge() > 20).limit(2).forEach(System.out::println);
+        System.out.println("-----------------------------");
+        students.stream().filter(e -> e.getAge() > 20).skip(2).forEach(System.out::println);
     }
 }
