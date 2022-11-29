@@ -14,33 +14,38 @@ public class WaitNotifyExample {
 
 class Market {
     private int breadCount = 0;
+    private final Object lock = new Object();
 
-    public synchronized void getBread() {
-        while (breadCount < 1) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+    public void getBread() {
+        synchronized (lock) {
+            while (breadCount < 1) {
+                try {
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+            breadCount--;
+            System.out.println("Потребитель купил один хлеб");
+            System.out.println("Количество хлеба в магазине = " + breadCount);
+            lock.notify();
         }
-        breadCount--;
-        System.out.println("Потребитель купил один хлеб");
-        System.out.println("Количество хлеба в магазине = " + breadCount);
-        notify();
     }
 
-    public synchronized void putBread() {
-        while (breadCount >= 5) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+    public void putBread() {
+        synchronized (lock) {
+            while (breadCount >= 5) {
+                try {
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+            breadCount++;
+            System.out.println("Производитель добавил на витрину один хлеб");
+            System.out.println("Количество хлеба в магазине = " + breadCount);
+            lock.notify();
         }
-        breadCount++;
-        System.out.println("Производитель добавил на витрину один хлеб");
-        System.out.println("Количество хлеба в магазине = " + breadCount);
-        notify();
     }
 }
 
