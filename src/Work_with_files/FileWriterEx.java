@@ -16,9 +16,11 @@ public class FileWriterEx {
         FileWriter writer = null;
         try {
             writer = new FileWriter("C:\\Users\\Алексей\\Desktop\\test1.txt");
-            for (int i = 0; i < rubai.length(); i++) {
-                writer.write(rubai.charAt(i));
-            }
+//            for (int i = 0; i < rubai.length(); i++) {
+//                writer.write(rubai.charAt(i));
+//            }
+            writer.write(rubai); // альтернативное заполнение файла без цикла
+
             System.out.println("Done!");
         } catch (IOException e) {
             e.printStackTrace();
