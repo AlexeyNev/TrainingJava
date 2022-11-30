@@ -20,17 +20,16 @@ public class FileWriterEx {
 //            for (int i = 0; i < rubai.length(); i++) {
 //                writer.write(rubai.charAt(i));
 //            }
-              writer.write(rubai1); // альтернативное заполнение файла без цикла
+            writer.write(rubai1); // альтернативное заполнение файла без цикла
 
 //              writer.write(s); // если так сделать - файл рубаи перезапишется. нужно добавить true в new FileWriter
 
-                writer.write(rubai2);
+            writer.write(rubai2);
 
             System.out.println("Done!");
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             writer.close();
         }
     }
