@@ -2,15 +2,16 @@ package Work_with_files;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 
 /**
- * Класс RandomAccessFile - позволяет читать информацию из любого места файла и записывать информацию в любое место файла.
+ * Класс RandomAccessFileEx - позволяет читать информацию из любого места файла и записывать информацию в любое место файла.
  */
 
-public class RandomAccessFile {
+public class RandomAccessFileEx {
     public static void main(String[] args) {
-        try (java.io.RandomAccessFile file
-                     = new java.io.RandomAccessFile("test10.txt", "rw")) {
+        try (RandomAccessFile file
+                     = new RandomAccessFile("test10.txt", "rw")) {
 
             int a = file.read();
             System.out.println((char) a);
