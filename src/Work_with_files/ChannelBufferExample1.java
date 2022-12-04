@@ -31,6 +31,25 @@ public class ChannelBufferExample1 {
             System.out.println(stix);
 
 
+            /**
+             * Первый вариант записи в файл
+             * text.getBytes().length перевод текста в массив байтов
+             */
+              String text = "\nThere are only two ways to live your life.";
+//            ByteBuffer buffer2 = ByteBuffer.allocate(text.getBytes().length);
+//            buffer2.put(text.getBytes());
+//            buffer2.flip();
+//            channel.write(buffer2);
+
+            /**
+             * Второй вариант записи в файл
+             * text.getBytes() перевод текста в массив байтов
+             * wrap() записывает информацию сразу в буфер из текста переведенного в массив байтов
+             */
+            ByteBuffer buffer2 = ByteBuffer.wrap(text.getBytes());
+            channel.write(buffer2);
+
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
