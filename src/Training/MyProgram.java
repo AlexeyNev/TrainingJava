@@ -6,8 +6,11 @@ class MyProgram {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
+        int b = sc.nextInt();
+        double c = 0;
 
-        System.out.println(a >= 21 ? "Да" : "Нет");
+        c = (a * a) + (b * b);
+        System.out.println(Math. sqrt(c));
 
         sc.close();
     }
