@@ -7,10 +7,14 @@ class MyProgram {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        double c = 0;
+        int c = sc.nextInt();
 
-        c = (a * a) + (b * b);
-        System.out.println(Math. sqrt(c));
+        if ((a < b + c) && (b < a + c) && (c < a + b)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
 
         sc.close();
     }
