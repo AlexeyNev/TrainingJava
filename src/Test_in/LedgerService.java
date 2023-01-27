@@ -3,7 +3,7 @@ package Test_in;
 import java.math.BigDecimal;
 
 public interface LedgerService {
-    long createAccount(long accountId);
+    long createAccount();
 
     void transferFounds(long from, long to, BigDecimal amount);
 
